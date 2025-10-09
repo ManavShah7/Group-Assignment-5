@@ -27,4 +27,14 @@ document.addEventListener('DOMContentLoaded', () => {
       loginForm.classList.add('was-validated');
     });
   }
-}
+  
+  // DASHBOARD PAGE
+  if (userEmailDisplay) {
+    const loggedUser = localStorage.getItem('loggedInUser');
+    if (!loggedUser) {
+      window.location.href = "login.html";
+    } else {
+      userEmailDisplay.textContent = loggedUser;
+    }
+  }
+
